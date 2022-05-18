@@ -1,22 +1,12 @@
 let number = document.getElementById('guess');
-let span = document.getElementById('output');
 const button = document.querySelector('button');
 
-//TODO: Generate a number between 0 and 17
 button.addEventListener('click', event => {
     const secretNumber = 8;
     let userGuess= number.value;
     if (userGuess != secretNumber) {
-        alert('Bummer... You guessed `{$(number)}` and the secret number was `{$(secret-number)}`');
+        alert(`Bummer... You guessed ${userGuess} and the secret number was ${secretNumber}.`);
     } else {
-        alert('Awesome! Your number (actual number) was correct. You can be named many things, hungry not being one of them.')
+        alert(`Awesome! Your number ${userGuess} was correct. You can be named many things, hungry not being one of them.`);
     }
 });
-
-//TODO: User can enter a guess
-
-
-//TODO: Number will be compared to the secret number
-
-
-//TODO: Alert box with "Awesome!" and "Bummer..."
