@@ -1,12 +1,12 @@
 let number = document.getElementById('guess');
 let span = document.getElementById('output');
-let button = document.getElementsByTagName('button');
+const button = document.querySelector('button');
 
 //TODO: Generate a number between 0 and 17
-document.addEventListener('keyup', event => {
+button.addEventListener('click', event => {
     const secretNumber = 8;
-    let number = document.getElementById('guess').value;
-    if (number != secretNumber) {
+    let userGuess= number.value;
+    if (userGuess != secretNumber) {
         alert('Bummer... You guessed `{$(number)}` and the secret number was `{$(secret-number)}`');
     } else {
         alert('Awesome! Your number (actual number) was correct. You can be named many things, hungry not being one of them.')
