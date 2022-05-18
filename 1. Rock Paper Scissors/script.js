@@ -1,16 +1,30 @@
-//TODO: Three buttons that the player can press to use rock, paper or scissors
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
+const computerChoiceDisplay = document.getElementById('computer-choice')
+const userChoiceDisplay = document.getElementById('user-choice')
+const resultDisplay = document.getElementById('result')
+const possibleChoices = document.querySelectorAll('button')
+let userChoice
+let computerChoice
 
-button.addEventListener('click', event => {
-    
-})
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (event) => { 
+    userChoice = event.target.id
+    userChoiceDisplay.innerHTML = userChoice
+    generateComputerChoice()
+}))
 
-//TODO: Play button so that computer picks one randomly
+function generateComputerChoice() {
+    const randomNumber = Math.floor(Math.random() * 3) + 1 // or possibleChoice.length
+
+    if (randomNumber === 1) {
+        computerChoice = 'rock'
+    }
+    if (randomNumber === 2) {
+        computerChoice = 'scissors'
+    }
+    if (randomNumber === 3) {
+        computerChoice = 'paper'
+    }
+    computerChoiceDisplay.innerHTML = computerChoice
+}
 
 
-//TODO: Announce a winner by using HTML message
 
-
-//TODO: Possible outcomes
