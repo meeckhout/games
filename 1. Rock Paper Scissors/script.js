@@ -2,6 +2,8 @@ const computerChoiceDisplay = document.getElementById('computer-choice')
 const userChoiceDisplay = document.getElementById('user-choice')
 const resultDisplay = document.getElementById('result')
 const possibleChoices = document.querySelectorAll('button')
+const playButton = document.querySelector('play')
+
 let userChoice
 let computerChoice
 let result
@@ -9,12 +11,18 @@ let result
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (event) => { 
     userChoice = event.target.id
     userChoiceDisplay.innerHTML = userChoice
-    generateComputerChoice()
-    getResult()
+    // generateComputerChoice()
+    // getResult()
 }))
 
+playButton.addEventListener('click', (event) => {
+    
+    
+})
+
+
 function generateComputerChoice() {
-    const randomNumber = Math.floor(Math.random() * 3) + 1 // or possibleChoice.length
+    const randomNumber = Math.floor(Math.random() * 3) // or possibleChoice.length
 
     if (randomNumber === 1) {
         computerChoice = 'rock'
