@@ -4,19 +4,27 @@
     box-sizing: border-box;
 }
 
-section, div, span, button {
-    border: 1px solid hotpink;
-}
+// section, div, span, button {
+//     border: 1px solid hotpink;
+// }
 
 .section-main {
+    border: 1px solid hotpink;
     background-color: rgba(21, 183, 64, 0.704);
     height: 100vh;
 }
 
 .dealer, .user {
+    border: 1px solid rgb(123, 105, 255);
     display: inline-block;
     width: 10rem;
     height: 13rem;
     background-color: rgb(233, 233, 233);
+}
+
+.section-result {
+    border: 1px solid rgb(255, 245, 105);
+    display: flex;
+    justify-content: flex-end;
 }
 
