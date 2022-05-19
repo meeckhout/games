@@ -9,10 +9,8 @@ let computerChoice
 let result
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (event) => { 
-    userChoice = event.target.id
+    userChoice = event.target.closest('button').id
     userChoiceDisplay.innerHTML = userChoice
-    // generateComputerChoice()
-    // getResult()
 }))
 
 playButton.addEventListener('click', (event) => {

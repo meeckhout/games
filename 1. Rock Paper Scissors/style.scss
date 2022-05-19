@@ -1,22 +1,39 @@
-// * {
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-// }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
 
-// // h1 {
-// //     display: flex;
-// //     justify-content: center;
-// // }
+h2, span {
+    display: flex;
+    justify-content: center;
+}
 
-// main, h1 {
-//     display: flex;
-//     justify-content: center;
-// }
+.sectionButtons, .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 1rem 0 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
-// #rock-paper-scissors {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-// }
+.play {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    background: none;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 6rem;
+    height: 3rem;
+    cursor: pointer;
+}
 
+img {
+    height: 100px;
+}
