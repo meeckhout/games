@@ -18,9 +18,8 @@ playButton.addEventListener('click', (event) => {
     getResult()
 })
 
-
 function generateComputerChoice() {
-    const randomNumber = Math.floor(Math.random() * 3) // or possibleChoice.length
+    const randomNumber = Math.floor(Math.random() * 3) +1 // or possibleChoice.length
 
     if (randomNumber === 1) {
         computerChoice = 'rock'
@@ -36,7 +35,7 @@ function generateComputerChoice() {
 
 function getResult () {
     if (computerChoice === userChoice) {
-        result = 'its a draw!'
+        result = 'draw!'
     }
     if (computerChoice === 'rock' && userChoice === 'paper') {
         result = 'you win!'

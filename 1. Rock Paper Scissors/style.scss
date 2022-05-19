@@ -7,30 +7,45 @@
     letter-spacing: .5px;
 }
 
-h2, span {
+main {
+    margin-top: 50px;
+}
+
+h1, h2, span {
     display: flex;
     justify-content: center;
+    align-items: baseline;
+    margin: 1rem 0 0 .5rem;
+}
+
+.sectionButtons {
+    position: relative;
 }
 
 .sectionButtons, .button {
+    // position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0 1rem 0 1rem;
+    margin: 2rem 1rem 0 1rem;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.play {
+#play, .play {
+    position: absolute;
+    left: 47%;
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 500;
+    color: white;
     text-transform: uppercase;
-    background: none;
-    border: 2px solid red;
+    background: rgb(136, 19, 97);
+    border: 2px solid rgb(121, 18, 86);
     border-radius: 10px;
     width: 6rem;
     height: 3rem;
+    margin-top: 3rem;
     cursor: pointer;
 }
 
