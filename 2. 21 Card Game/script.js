@@ -8,7 +8,7 @@ const stay = document.getElementById('stay')
 let hitMe = true
 let card
 let cardNumber
-let drawCard
+let drawCard = 0
 let total = cardNumber
 
 // TODO: Ask user if they want a card
@@ -25,8 +25,9 @@ function getRandomNumber() {
 }
 
 function dealCards() {
-    total += Math.floor(Math.random() * 10 + 1)
-    document.getElementById('user-left').value.innerText = total
+    drawCard += Math.floor(Math.random() * 10 + 1)
+    document.getElementById('user-left').innerText = cardNumber
+    document.getElementById('user-right').innerText = drawCard
 }
 
 
