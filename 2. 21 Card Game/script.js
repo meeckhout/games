@@ -11,7 +11,7 @@ let card
 let cardNumber
 let drawCard
 let sum
-
+let total = 0
 
 
 
@@ -37,12 +37,9 @@ function getRandomNumber() {
 
     if (drawCard != 21) {
         hitMe = confirm(`You have ${drawCard}. Add more?`)
-
-        while(hitMe === true) {
-            hit.addEventListener ('click',(event) => {
-                
-            })
-        }
+    }
+        while (total != 21) {
+            
     }
 }
 
