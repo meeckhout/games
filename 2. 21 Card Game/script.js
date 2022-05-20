@@ -5,10 +5,14 @@ const dealer = document.querySelector('.dealer')
 const play = document.getElementById('play')
 const hit = document.getElementById('hit')
 const stay = document.getElementById('stay')
-// let deck = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+
+let hitMe = true
 let card
 let cardNumber
 let drawCard
+let sum
+
+
 
 
 // TODO: Ask user if they want a card
@@ -27,18 +31,18 @@ play.addEventListener('click', (event) => {
 
 //TODO: Add a function that draws a random number between 1 and 13
 function getRandomNumber() {
+    // sum = cardNumber + drawCard
     cardNumber = Math.floor(Math.random() * 13) + 1;
     drawCard = cardNumber;
+
     if (drawCard != 21) {
-        alert(`You have ${drawCard}. Add more?`)
-        hit.addEventListener('click', event => {
-            countCards()
-        })
-    } console.log(cardNumber);
+        hitMe = confirm(`You have ${drawCard}. Add more?`)
+
+        while(hitMe === true) {
+            hit.addEventListener ('click',(event) => {
+                
+            })
+        }
+    }
 }
 
-function countCards() {
-    if (drawCard != 21) {
-        alert(`You have ${drawCard}. Add more?`)
-    } console.log(drawCard);
-}
