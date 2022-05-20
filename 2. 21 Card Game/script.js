@@ -1,5 +1,6 @@
 
 const userCard = document.querySelector('.user-left')
+let boomVisible = document.querySelector('.user-right')
 const dealer = document.querySelector('.dealer')
 const play = document.getElementById('play')
 const hit = document.getElementById('hit')
@@ -9,13 +10,18 @@ let hitMe = true
 let card
 let cardNumber
 let drawCard = 0
-let total = cardNumber
+let total = cardNumber + drawCard
 
 // TODO: Ask user if they want a card
 play.addEventListener('click', (event) => {
     console.log(getRandomNumber());
     console.log(dealCards());
+
     // console.log(countCards());
+})
+
+hit.addEventListener('click', (event) => {
+    console.log(dealerCards());
 })
 
 //TODO: Add a function that draws a random number between 1 and 13
@@ -25,21 +31,13 @@ function getRandomNumber() {
 }
 
 function dealCards() {
-    drawCard += Math.floor(Math.random() * 10 + 1)
-    document.getElementById('user-left').innerText = cardNumber
+    drawCard = Math.floor(Math.random() * 10 + 1)
+    document.getElementById('user-left').innerText = total
     document.getElementById('user-right').innerText = drawCard
 }
 
-
-    // if (drawCard != 21) {
-    //     hitMe = confirm(`You have ${drawCard}. Add more?`)
-    //     // userCard.innerHTML = drawCard
-    // }
-
-
-// function countCards() {
-//     for (let i = 0; i < 3; i++) {
-//         getRandomNumber();
-//         total += card
-//     } 
-// }
+function dealerCards() {
+    drawCard = Math.floor(Math.random() * 10 + 1)
+    document.getElementById('dealer-left').innerText = drawCard 
+    document.getElementById('dealer-right').innerText = drawCard
+}
