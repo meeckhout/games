@@ -10,36 +10,29 @@ let hitMe = true
 let card
 let cardNumber
 let drawCard
-let sum
-let total = 0
-
 
 
 // TODO: Ask user if they want a card
 play.addEventListener('click', (event) => {
-    // console.log(generateCard());
     console.log(getRandomNumber());
-    // console.log(countCards());
+    console.log(countCards());
 })
 
-// function generateCard() {
-//     card = Math.floor(Math.random() * 52 + 1) +1
-    
-
-//     console.log(card);
-// }
 
 //TODO: Add a function that draws a random number between 1 and 13
 function getRandomNumber() {
-    // sum = cardNumber + drawCard
-    cardNumber = Math.floor(Math.random() * 13) + 1;
+    cardNumber = Math.floor(Math.random() * 11) + 1;
     drawCard = cardNumber;
 
     if (drawCard != 21) {
         hitMe = confirm(`You have ${drawCard}. Add more?`)
     }
-        while (total != 21) {
-            
-    }
+}
+
+function countCards() {
+    for (let i = 0; i < 3; i++) {
+        getRandomNumber();
+        drawCard += cardNumber
+    } 
 }
 
