@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer src="index.js"></script>
     <title>21 Cards</title>
 </head>
 <body>
@@ -18,34 +15,9 @@
     </header>
 
     <main>
-        <section class="section-main">
-            <section class="section-dealer">
-                <h2>Dealer's Deck</h2>
-                <span id="dealer-left" class="dealer"></span>
-                <span id="dealer-right" class="dealer" style="visibility:hidden"></span>
-            </section>
 
-            <section class="section-user">
-                <h2>Your Deck</h2>
-                <span id="user-left" class="user"></span>
-                <span id="user-right" class="user" style="visibility: hidden"></span>
-            </section>
+        <button onClick="hit()">Hit</button>
 
-            <section class="section-result">
-                <h2>Result</h2>
-                <span class="result">Result</span>
-
-                <div class="buttons">
-                    <button id="play">Play</button>
-                    <button id="hit">Hit</button>
-                    <button id="stay">Stay</button>
-                </div>
-            </section>
-        </section>
     </main>
-
-    <footer>
-    </footer>
-
 </body>
 </html>

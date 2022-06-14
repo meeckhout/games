@@ -3,19 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-section, div, span, button {
-    border: 1px solid hotpink;
-}
-
-.section-main {
-    background-color: rgba(21, 183, 64, 0.704);
-    height: 100vh;
-}
-
-.dealer, .user {
-    display: inline-block;
-    width: 10rem;
-    height: 13rem;
-    background-color: rgb(233, 233, 233);
-}
