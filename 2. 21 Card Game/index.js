@@ -27,8 +27,6 @@ const getHandValue = (hand) => {
 
 const hit = () => {
     playerHand.push(drawRandomCard(deck))
-    console.log("hit!")
-    console.log('new player hand: ' + playerHand)
     if (getHandValue(playerHand) > 21) {
         document.getElementById('game-status').innerHTML = "BUST!"
     }
@@ -42,6 +40,12 @@ const stay = () => {
         console.log("BUST!")
     }
 }
+
+
+document.getElementById('refresh').addEventListener('click', event => {
+    window.location.reload()
+    }
+)
 
 startGame()
 
