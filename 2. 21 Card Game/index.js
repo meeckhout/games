@@ -10,12 +10,12 @@ const drawRandomCard = (deck) => {
     const randomIndex = Math.floor(Math.random() * deck.length)
     return deck[randomIndex]
 }
-// console.log(drawRandomCard(deck))
 
 const startGame = () => {
     playerHand = [drawRandomCard(deck), drawRandomCard(deck)]
     dealerHand = [drawRandomCard(deck), drawRandomCard(deck)]
 }
+
 
 const getHandValue = (hand) => {
     let sum = 0
@@ -33,10 +33,8 @@ const hit = () => {
 }
 
 const stay = () => {
-    playerHand.push(drawRandomCard(deck))
-    console.log("hit!")
-    console.log('new player hand: ' + playerHand)
-    if (getHandValue(playerHand) > 21) {
+    dealerHand.push(drawRandomCard(deck))
+    if (getHandValue(dealerHand) > 21) {
         console.log("BUST!")
     }
 }
@@ -46,6 +44,8 @@ document.getElementById('refresh').addEventListener('click', event => {
     window.location.reload()
     }
 )
+
+// document.getElementById('play').addEventListener('click', startGame())
 
 startGame()
 
