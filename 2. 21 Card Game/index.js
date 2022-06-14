@@ -29,10 +29,23 @@ const hit = () => {
     playerHand.push(drawRandomCard(deck))
     console.log("hit!")
     console.log('new player hand: ' + playerHand)
+    if (getHandValue(playerHand) > 21) {
+        document.getElementById('game-status').innerHTML = "BUST!"
+    }
+}
+
+const stay = () => {
+    playerHand.push(drawRandomCard(deck))
+    console.log("hit!")
+    console.log('new player hand: ' + playerHand)
+    if (getHandValue(playerHand) > 21) {
+        console.log("BUST!")
+    }
 }
 
 startGame()
-console.log('player hand ' + playerHand)
-console.log('player hand value ' + getHandValue(playerHand))
-console.log('dealer hand ' + dealerHand)
-console.log('dealer hand value ' + getHandValue(dealerHand))
+
+document.getElementById('player-hand').innerHTML = playerHand
+document.getElementById('player-hand-value').innerHTML = getHandValue(playerHand)
+document.getElementById('dealer-hand').innerHTML = dealerHand
+document.getElementById('dealer-hand-value').innerHTML = getHandValue(dealerHand)
