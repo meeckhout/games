@@ -1,4 +1,4 @@
-let deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
+const deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
@@ -10,10 +10,6 @@ const drawRandomCard = (deck) => {
     const randomIndex = Math.floor(Math.random() * deck.length)
     return deck[randomIndex]
 }
-
-document.getElementById('play').addEventListener('click', event => {
-    playerHand = [drawRandomCard(deck)]
-})
 
 const startGame = () => {
     playerHand = [drawRandomCard(deck), drawRandomCard(deck)]
@@ -44,9 +40,13 @@ const stay = () => {
 
 
 document.getElementById('refresh').addEventListener('click', event => {
-    window.location.reload()
+        window.location.reload()
     }
 )
+
+// document.getElementById('play').addEventListener('click', startGame())
+
+startGame()
 
 document.getElementById('player-hand').innerHTML = playerHand
 document.getElementById('player-hand-value').innerHTML = getHandValue(playerHand)
