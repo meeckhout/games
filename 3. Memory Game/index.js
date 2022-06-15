@@ -37,16 +37,19 @@ const cardGenerator = () => {
   const cardData = randomise();
   //Generate HTML
   cardData.forEach(item => {
-    console.log(item)
+    const card = document.createElement('div')
+    const face = document.createElement('img')
+    const back = document.createElement('div')
+    card.classList = 'card'
+    face.classList = 'face'
+    back.classList = 'back'
+    //Attach img to cards
+    face.src = item.imgSrc
+    //Attach card to section
+    section.appendChild(card)
+    card.appendChild(face)
+    card.appendChild(back)
   })
-
-  const card = document.createElement('div')
-  const face = document.createElement('img')
-  const back = document.createElement('div')
-  card.classList = 'card'
-  face.classList = 'face'
-  back.classList = 'back'
-
 }
 
 cardGenerator()

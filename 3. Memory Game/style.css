@@ -5,27 +5,22 @@
 }
 
 body {
-  font-family: "Helvetica Neue";
-  font-size: 2rem;
-}
-
-.cards {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.card {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 300px;
-  border: 2px solid #11BFBF;
-  margin: 2rem;
-  background-color: #14D9D9;
-  color: purple;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 8rem);
+}
+
+.face, .back {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
