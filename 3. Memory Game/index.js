@@ -63,11 +63,11 @@ const checkCards = (e) => {
   const clickedCard = e.target
   clickedCard.classList.add('flipped')
   const flippedCards = document.querySelectorAll('.flipped')
+  const toggleCard = document.querySelectorAll('.toggleCard')
   //Logic
   if (flippedCards.length === 2){
     if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')
     ) {
-      console.log('match')
       flippedCards.forEach((card) => {
         card.classList.remove('flipped')
         card.style.pointerEvents = 'none'
@@ -76,24 +76,38 @@ const checkCards = (e) => {
     flippedCards.forEach((card) => {
       card.classList.remove('flipped')
       setTimeout(() => card.classList.remove('toggleCard'), 1000)
-      console.log('wrong')
     })
       playerLives--
       playerLivesCount.textContent = playerLives
       if (playerLives === 0) {
-        restart()
+        restart("Otterly disappointing, you otter try again!")
       }
   }}
+  //Run check to see if you won
+  if (toggleCard.length === 16){
+    restart("Otterwordly performance! You rock!")
+  }
 }
 
 //Restart
-const restart = () => {
+const restart = (text) => {
   let cardData = randomise()
   let faces = document.querySelectorAll('.face')
   let cards = document.querySelectorAll('.card')
+  section.style.pointerEvents = 'none'
   cardData.forEach((item, index) => {
     cards[index].classList.remove('toggleCard')
+    //Randomise
+    setTimeout(() => {
+      cards[index].style.pointerEvents = 'all'
+      faces[index].src = item.imgSrc
+      cards[index].setAttribute('name', item.name)
+      section.style.pointerEvents = 'all'
+    }, 1000)
   })
+  playerLives = 6
+  playerLivesCount.textContent = playerLives
+  setTimeout(() => window.alert(text), 100)
 }
 
 cardGenerator()
