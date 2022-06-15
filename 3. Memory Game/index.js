@@ -64,7 +64,8 @@ const checkCards = (e) => {
   clickedCard.classList.add('flipped')
   const flippedCards = document.querySelectorAll('.flipped')
   //Logic
-  if (flippedCards.length === 2){
+  if (flippedCards.length = 2){
+    console.log('it works')
     if (
         flippedCards[0].getAttribute('name') ===
         flippedCards[1].getAttribute('name'))
