@@ -1,6 +1,6 @@
 const section = document.querySelector('section')
 const playerLivesCount = document.querySelector('.playerLivesCount')
-const playerLives = 6
+let playerLives = 6
 
 // Link text
 playerLivesCount.textContent = playerLives
@@ -65,16 +65,35 @@ const checkCards = (e) => {
   const flippedCards = document.querySelectorAll('.flipped')
   //Logic
   if (flippedCards.length === 2){
-    console.log('it works')
-    if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name'))
+    if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')
+    ) {
       console.log('match')
-    else {
+      flippedCards.forEach((card) => {
+        card.classList.remove('flipped')
+        card.style.pointerEvents = 'none'
+      })
+    } else {
     flippedCards.forEach((card) => {
       card.classList.remove('flipped')
       setTimeout(() => card.classList.remove('toggleCard'), 1000)
       console.log('wrong')
     })
+      playerLives--
+      playerLivesCount.textContent = playerLives
+      if (playerLives === 0) {
+        restart()
+      }
   }}
+}
+
+//Restart
+const restart = () => {
+  let cardData = randomise()
+  let faces = document.querySelectorAll('.face')
+  let cards = document.querySelectorAll('.card')
+  cardData.forEach((item, index) => {
+    cards[index].classList.remove('toggleCard')
+  })
 }
 
 cardGenerator()
