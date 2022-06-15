@@ -60,9 +60,22 @@ const cardGenerator = () => {
 
 //Check cards
 const checkCards = (e) => {
-  console.log(e)
   const clickedCard = e.target
-  console.log(clickedCard)
+  clickedCard.classList.add('flipped')
+  const flippedCards = document.querySelectorAll('.flipped')
+  //Logic
+  if (flippedCards.length === 2){
+    if (
+        flippedCards[0].getAttribute('name') ===
+        flippedCards[1].getAttribute('name'))
+      console.log('match')
+    } else {
+    flippedCards.forEach((card) => {
+      card.classList.remove('flipped')
+      setTimeout(() => card.classList.remove('toggleCard'), 1000)
+      console.log('wrong')
+    })
+  }
 }
 
 cardGenerator()
